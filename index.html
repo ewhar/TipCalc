@@ -5,7 +5,7 @@
     <title>TipCalc</title>
     <link rel="stylesheet" type="text/css" href="css/tipCalc.css"/>
 </head>
-<body>
+<body onload="init()">
     <div id="divContainer">
        <div id="divHead">
            <h2>Tip Calcuator</h2>
@@ -13,23 +13,23 @@
         <div id="divBody">
             <form>
                 <div id="divInputText">
-                <input id="ipTxtBetr" type="text" placeholder="Betrag in €">
-                <input id="ipTxtPers" type="text" placeholder="Personen">
+                <input id="ipTxtBetr" type="text" onkeypress="return onlyNumberKey(event)" onchange="updateTG()" placeholder="Betrag in €">
+                <input id="ipTxtPers" type="text" onkeypress="return onlyNumberKey(event)" onchange="updateTG()" placeholder="Personen" >
                 </div>
                 <div id="inputSlider">
                     <p>Wert: <span id="pValue"></span></p>
-                    <input type="range" min="1" max="100" value="50" class="slider" id="inpSlider">
+                    <input type="range" min="1" max="100" value="50" class="slider" id="inpSlider" onchange="updateSlider(this.id)">
                 </div>
                 <div id="divDefaultValues">
-                    <input type="button" value="3%" id="ipBtn3">
-                    <input type="button" value="5%" id="ipBtn5">
-                    <input type="button" value="7%" id="ipBtn7">
+                    <input type="button" value="3%" id="ipBtn3" onclick="updateSlider(this.id)">
+                    <input type="button" value="5%" id="ipBtn5" onclick="updateSlider(this.id)">
+                    <input type="button" value="7%" id="ipBtn7" onclick="updateSlider(this.id)">
                 </div>
             </form>
             <div id="divOutput">
-                <p id="pTrinkgeld"></p>
-                <p id="pGesamt"></p>
-                <p id="pKpP"></p>
+                <p><b>Trinkgeld:</b>  <span id="pTrinkgeld"></span></p>
+                <p><b>Gesamtkosten:</b> <span id="pGesamt"></span></p>
+                <p><b>Kosten pro Person:</b> <span id="pKpP"></span></p>
             </div>
         </div>
     </div>
