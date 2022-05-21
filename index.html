@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TipCalc</title>
+    <link rel="stylesheet" type="text/css" href="css/tipCalc.css"/>
+</head>
+<body>
+    <div id="divContainer">
+       <div id="divHead">
+           <h2>Tip Calcuator</h2>
+       </div>
+        <div id="divBody">
+            <form>
+                <div id="divInputText">
+                <input id="ipTxtBetr" type="text" placeholder="Betrag in €">
+                <input id="ipTxtPers" type="text" placeholder="Personen">
+                </div>
+                <div id="inputSlider">
+                    <p>Wert: <span id="pValue"></span></p>
+                    <input type="range" min="1" max="100" value="50" class="slider" id="inpSlider">
+                </div>
+                <div id="divDefaultValues">
+                    <input type="button" value="3%" id="ipBtn3">
+                    <input type="button" value="5%" id="ipBtn5">
+                    <input type="button" value="7%" id="ipBtn7">
+                </div>
+            </form>
+            <div id="divOutput">
+                <p id="pTrinkgeld"></p>
+                <p id="pGesamt"></p>
+                <p id="pKpP"></p>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript" src="js/tipCalc.js"></script>
+</body>
+</html>
