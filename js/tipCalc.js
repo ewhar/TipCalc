@@ -2,9 +2,6 @@ let inpSlider = document.getElementById("inpSlider");
 let pValue = document.getElementById("pValue");
 let ipTxtBetr = document.getElementById("ipTxtBetr");
 let ipTxtPers = document.getElementById("ipTxtPers");
-let ipBtn3 = document.getElementById("ipBtn3");
-let ipBtn5 = document.getElementById("ipBtn5");
-let ipBtn7 = document.getElementById("ipBtn7");
 let pTrinkgeld = document.getElementById("pTrinkgeld");
 let pGesamt = document.getElementById("pGesamt");
 let pKpP = document.getElementById("pKpP");
@@ -25,15 +22,16 @@ function updateSlider(clicked_id) {
 }
 
 function updateTG(){
-
     let betrag = ipTxtBetr.value;
     let AnzPers = ipTxtPers.value;
     let prozent = inpSlider.value;
     if (betrag && AnzPers) {
         let trinkgeld = prozent/100*betrag;
         let res = trinkgeld.toFixed(2);
-        console.log(trinkgeld);
-
+        let ges = parseFloat(betrag) + parseFloat(res);
+        pTrinkgeld.innerHTML = res;
+        pGesamt.innerHTML = ges;
+        pKpP.innerHTML = (ges / AnzPers).toFixed(2);
     }
 }
 
